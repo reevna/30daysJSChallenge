@@ -1,0 +1,39 @@
+html {
+    background-color: #cfdbf0;
+}
+
+:root {
+    --color: #9a21ae;
+    --spacing: 10px;
+    --blur: 1px;
+  }
+
+.controls {
+    text-align: center;
+    margin: auto;
+    margin-top: 7vh;
+}
+
+img {
+    display: block;
+    margin: 3vh auto auto auto;
+    height: 50vh;
+    padding: var(--spacing);
+    background: var(--color);
+    filter: blur(var(--blur));
+}
+
+.title {
+    font: 2.5rem Tahoma bold;  
+    font-weight: bold;
+}
+
+.title_changing {
+    color: var(--color);
+}
+
+.controls__wrapper {
+    display: block;
+    margin: 2vh 0 1vh;
+    font: 1.5rem Tahoma;
+}

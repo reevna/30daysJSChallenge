@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update css variable with js</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="controls">
+        <h1 class="title">Update css variable with <span class="title_changing">JS</span></h1>
+        <!--
+         to override chosen color specify it in inline style
+        <h1 class="title" style="--color: #27b6de;">Update css variable with <span class="title_changing">JS</span></h1>
+       -->
+        <label for="spacing" class="controls__wrapper">Spacing:</label>
+        <input type="range" min="1px" max="120px" name="spacing" value="10" data-stiling="px">
+
+        <label for="blur" class="controls__wrapper">Blur:</label>
+        <input type="range" min="0" max="25" name="blur" value="1" data-stiling="px">
+
+        <label for="color" class="controls__wrapper">Base color:</label>
+        <input type="color" name="color" value="#9a21ae">
+    </div>
+    <img src="china.jpg">
+
+    <script>
+        const inputs = document.querySelectorAll('.controls input');
+
+        function handleUpdate() {
+            const suffix = this.dataset.stiling || '';
+            document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
+        }
+
+        inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));  //'change' can be used for some inputs as well
+
+    </script>
+
+</body>
+</html>
